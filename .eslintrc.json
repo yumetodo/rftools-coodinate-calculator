@@ -1,5 +1,5 @@
 {
-  "extends": ["eslint:recommended", "plugin:node/recommended", "plugin:@typescript-eslint/recommended", "prettier"],
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "prettier"],
   "plugins": ["@typescript-eslint"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -19,9 +19,6 @@
     "no-useless-escape": "error",
     "eqeqeq": ["error", "always", { "null": "ignore" }],
     "no-constant-condition": ["error", { "checkLoops": false }],
-    "node/shebang": "error",
-    "node/no-unsupported-features/es-syntax": "off",
-    "node/no-missing-import": "off",
     "@typescript-eslint/semi": "error",
     "@typescript-eslint/naming-convention": [
       "error",
