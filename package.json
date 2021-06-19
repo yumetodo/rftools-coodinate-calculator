@@ -4,7 +4,11 @@
   "description": "",
   "main": "dist/lib.js",
   "scripts": {
-    "test": "jest --verbose"
+    "test": "jest --verbose",
+    "eslint": "eslint --ext .ts . --cache",
+    "eslint:fix": "eslint --ext .ts --fix . --cache",
+    "prettier": "prettier --write .",
+    "tsc": "tsc --noEmit"
   },
   "author": "yumetodo",
   "license": "MIT",
