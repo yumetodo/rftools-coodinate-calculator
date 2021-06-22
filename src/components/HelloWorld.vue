@@ -1,30 +1,38 @@
 <template>
   <h1>{{ msg }}</h1>
 
-  <p>
-    <a href="https://vitejs.dev/guide/features.html" target="_blank">
-      Vite Documentation
-    </a>
-    |
-    <a href="https://v3.vuejs.org/" target="_blank">Vue 3 Documentation</a>
-  </p>
-
-  <button type="button" @click="state.count++">count is: {{ state.count }}</button>
-  <input type="text">
-  <p>
-    Edit
-    <code>components/HelloWorld.vue</code> to test hot module replacement.
-  </p>
+  <Inputs @input="onInput" />
 </template>
 
 <script lang="ts" setup>
-import { defineProps, reactive } from 'vue'
+import { defineProps, defineComponent, reactive, toRefs } from 'vue'
+import Inputs from './Inputs.vue';
+import { calc } from '../../lib/lib';
+import type { RFToolsCoordinate } from '../../lib/lib';
+import type { InputData } from '../InputData';
 
+defineComponent({
+  components: {
+    Inputs
+  },
+  setup() {
+    const { dim, offset } = toRefs(reactive<RFToolsCoordinate>({
+      dim: [0, 0, 0],
+      offset: [0, 0, 0]
+    }));
+    const onInput = (i: InputData) => {
+      const re = calc(i.builder, i.p1, i.p2);
+      dim.value = re.dim;
+      offset.value = re.offset;
+    }
+    return {
+      onInput
+    }
+  }
+})
 defineProps({
   msg: String
 })
-const inputs = [[0, 0, 0], [0,0,0]].map(i => i.map(c => reactive({c: c})));
-const state = reactive({ count: 0 })
 </script>
 
 <style scoped>
