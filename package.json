@@ -1,21 +1,30 @@
 {
   "name": "rftools-coodinate-calculator",
   "version": "1.0.0",
-  "description": "",
+  "description": "rftools(Minecraft Mod) coodinate calculator",
   "main": "dist/lib.js",
   "scripts": {
     "test": "jest --verbose",
     "eslint": "eslint --ext .ts . --cache",
     "eslint:fix": "eslint --ext .ts --fix . --cache",
     "prettier": "prettier --write .",
-    "tsc": "tsc --noEmit"
+    "tsc": "tsc --noEmit",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
   },
   "author": "yumetodo",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yumetodo/rftools-coodinate-calculator"
+  },
   "devDependencies": {
     "@types/jest": "^26.0.23",
     "@typescript-eslint/eslint-plugin": "^4.27.0",
     "@typescript-eslint/parser": "^4.27.0",
+    "@vitejs/plugin-vue": "^1.2.3",
+    "@vue/compiler-sfc": "^3.1.1",
     "esbuild": "^0.12.9",
     "eslint": "^7.29.0",
     "eslint-config-prettier": "^8.3.0",
@@ -24,7 +33,11 @@
     "npm-run-all": "^4.1.5",
     "prettier": "^2.3.1",
     "ts-jest": "^27.0.3",
-    "typescript": "^4.3.4"
+    "typescript": "^4.3.4",
+    "vite": "^2.3.8"
+  },
+  "dependencies": {
+    "vue": "^3.1.1"
   },
   "jest": {
     "transform": {
